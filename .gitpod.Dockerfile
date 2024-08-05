@@ -11,4 +11,4 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 RUN /workspace/miniconda/bin/conda init bash
 
 # persist ~/miniconda between gitpod timeouts
-RUN echo 'create-overlay $HOME/.bashrc' > "$HOME/.runonce/1-bashrc"
+#RUN echo 'create-overlay $HOME/.bashrc' > "$HOME/.runonce/1-bashrc"
