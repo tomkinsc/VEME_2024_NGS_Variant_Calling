@@ -19,4 +19,4 @@ COPY environment.yml .
 # install packages for specifiedenvironment
 RUN /workspace/miniconda/bin/conda update -n base conda && \
     /workspace/miniconda/bin/conda config --set always_yes yes && \
-    /workspace/miniconda/bin/conda create -f environment.yml
+    /workspace/miniconda/bin/conda create -n variant_calling -f environment.yml
