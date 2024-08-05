@@ -14,7 +14,7 @@ tasks:
         fi;
         /workspace/miniconda/bin/conda init bash;
         echo "PATH=/workspace/miniconda/bin:$PATH" >> $HOME/.bashrc;
-        hash -r
+        hash -r;
         echo "conda activate $conda_env_name" >> $HOME/.bashrc;
         source $HOME/.bashrc;
         conda config --set auto_activate_base false;
