@@ -12,6 +12,7 @@ tasks:
             rm miniconda.sh;
             echo "Miniconda installed.";
         fi;
+        /workspace/miniconda/bin/conda init bash # init again due to potential gitpod override of Docker state
         echo "PATH=/workspace/miniconda/bin:$PATH" >> $HOME/.bashrc;
         echo "conda activate $conda_env_name" >> $HOME/.bashrc;
         source $HOME/.bashrc;
