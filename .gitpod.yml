@@ -4,7 +4,7 @@ image:
 tasks:
   - name: Setup and Activate Conda Environment
     init: >
-        conda_env_name=variant_calling
+        conda_env_name=variant_calling;
         if [ ! -d /workspace/miniconda ]; then
             echo "Installing Miniconda...";
             wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
