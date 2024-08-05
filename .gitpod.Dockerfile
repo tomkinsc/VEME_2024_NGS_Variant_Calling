@@ -13,4 +13,4 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 RUN $HOME/miniconda/bin/conda init bash && \
     $HOME/miniconda/bin/conda install -n base conda-libmamba-solver && \
     $HOME/miniconda/bin/conda config --set solver libmamba && \
-    $HOME/miniconda/bin/conda conda env create -f environment.yml
+    $HOME/miniconda/bin/conda env create -f environment.yml
