@@ -13,5 +13,5 @@ COPY gitpod/environment.yml .
 # install and use mamba as the dependency solver
 # install packages for specifiedenvironment
 RUN /workspace/miniconda/bin/conda update -n base conda && \
-    /workspace/miniconda/bin/conda config --set always_yes yes \
+    /workspace/miniconda/bin/conda config --set always_yes yes && \
     /workspace/miniconda/bin/conda create -f environment.yml
