@@ -2,12 +2,17 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
+RUN pwd
+RUN ls -lah
+RUN env
+RUN ls -lah /workspace
+
 # Install Miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /workspace/miniconda && \
     rm Miniconda3-latest-Linux-x86_64.sh
 
-COPY gitpod/environment.yml . 
+COPY environment.yml .
 
 # Initialize Conda 
 # install and use mamba as the dependency solver
