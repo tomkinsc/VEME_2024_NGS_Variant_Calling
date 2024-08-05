@@ -5,16 +5,16 @@ tasks:
   - name: Setup and Activate Conda Environment
     init: >
         conda_env_name=variant_calling;
-        conda info --envs;
-        pwd;
-        ls -lah /workspace;
-        ls -lah /workspace/miniconda;
         if [ ! -d /workspace/miniconda ]; then
-            echo "Installing Miniconda...";
-            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-            bash miniconda.sh -b -p /workspace/miniconda;
-            rm miniconda.sh;
-            echo "Miniconda installed.";
+          if [ -d $HOME/miniconda ]; then
+            cp -r $HOME/miniconda /workspace/miniconda;
+          else
+              echo "Installing Miniconda...";
+              wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+              bash miniconda.sh -b -p /workspace/miniconda;
+              rm miniconda.sh;
+              echo "Miniconda installed.";
+            fi;
         fi;
         /workspace/miniconda/bin/conda init bash;
         echo "PATH=/workspace/miniconda/bin:$PATH" >> $HOME/.bashrc;
